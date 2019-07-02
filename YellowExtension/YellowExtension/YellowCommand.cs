@@ -43,6 +43,9 @@ namespace YellowNamespace
             var menuCommandID = new CommandID(CommandSet, CommandId);
             var menuItem = new MenuCommand(this.Execute, menuCommandID);
             commandService.AddCommand(menuItem);
+
+            // TODO, remove this later
+            menuItem.Visible = false;
         }
 
         /// <summary>

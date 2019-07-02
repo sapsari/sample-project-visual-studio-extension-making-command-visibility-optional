@@ -55,6 +55,8 @@
       <Button guid="guidYellowPackageCmdSet" id="YellowCommandId" priority="0x0100" type="Button">
         <Parent guid="guidYellowPackageCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
+        <CommandFlag>DynamicVisibility<!--This flag makes setting property Visible functional-->
+      </CommandFlag>
         <Strings>
           <ButtonText>SMILE :)<!--Change text of the menu item here-->
         </ButtonText>
