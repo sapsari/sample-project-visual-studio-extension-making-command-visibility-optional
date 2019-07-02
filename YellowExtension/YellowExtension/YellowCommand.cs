@@ -89,8 +89,8 @@ namespace YellowNamespace
         private void Execute(object sender, EventArgs e)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            string title = "YellowCommand";
+            string message = "Such a nice smile :)";
+            string title = "Smile";
 
             // Show a message box to prove we were here
             VsShellUtilities.ShowMessageBox(

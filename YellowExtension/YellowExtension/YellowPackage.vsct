@@ -56,7 +56,8 @@
         <Parent guid="guidYellowPackageCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Invoke YellowCommand</ButtonText>
+          <ButtonText>SMILE :)<!--Change text of the menu item here-->
+        </ButtonText>
         </Strings>
       </Button>
     </Buttons>
