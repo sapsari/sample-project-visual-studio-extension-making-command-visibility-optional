@@ -27,6 +27,13 @@ namespace YellowNamespace
     [Guid(YellowPackage.PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideOptionPage(typeof(YellowOptionsPage), "Yellow Extension", "General", 0, 0, true)]
+    [ProvideUIContextRule("cc77a238-dcac-447c-bc95-bfd4d760d7e6", "UIContextRuleOfYellowCommand",
+        expression: "userWantsToSeeIt",
+        termNames: new[] { "userWantsToSeeIt" },
+        termValues: new[] {
+            "UserSettingsStoreQuery:" + YellowOptionsPage.RegistryFullPathToIsDisplayingYellowCommandAsBoolean
+        }
+    )]
     public sealed class YellowPackage : AsyncPackage
     {
         /// <summary>

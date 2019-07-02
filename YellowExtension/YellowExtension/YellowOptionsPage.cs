@@ -15,6 +15,11 @@ namespace YellowNamespace
         const string registryCollectionPath = @"ApplicationPrivateSettings\YellowNamespace\YellowOptionsPage";
         const string propertyName = nameof(IsDisplayingYellowCommand) + "Raw";
 
+        /// Full path into registry for boolean value of IsDisplayingYellowCommand, to be consumed by UI context rule
+        /// </summary>
+        public const string RegistryFullPathToIsDisplayingYellowCommandAsBoolean =
+            registryCollectionPath + @"\" + propertyName;
+
         [Category("UI")]
         [DisplayName("Display command")]
         [Description("Display or hide extension shortcut in Tools menu")]

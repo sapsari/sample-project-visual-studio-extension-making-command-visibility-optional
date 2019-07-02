@@ -75,9 +75,17 @@
     </Bitmaps>
   </Commands>
 
+  <VisibilityConstraints>
+    <!-- UI context rule of 'guidUIContextRuleOfYellowCommand' is bind to the command 'YellowCommand' here -->
+    <VisibilityItem guid="guidYellowPackageCmdSet" id="YellowCommandId" context="guidUIContextRuleOfYellowCommand" />
+  </VisibilityConstraints>
+
   <Symbols>
     <!-- This is the package guid. -->
     <GuidSymbol name="guidYellowPackage" value="{feb28215-eba5-4494-a5b9-c2a14e885d1d}" />
+
+    <!-- This is the UI context rule guid. -->
+    <GuidSymbol name="guidUIContextRuleOfYellowCommand" value="{cc77a238-dcac-447c-bc95-bfd4d760d7e6}" />
 
     <!-- This is the guid used to group the menu commands together -->
     <GuidSymbol name="guidYellowPackageCmdSet" value="{5532f941-37bf-41fd-afce-5f42f849438b}">
