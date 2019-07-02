@@ -26,6 +26,7 @@ namespace YellowNamespace
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(YellowPackage.PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
+    [ProvideOptionPage(typeof(YellowOptionsPage), "Yellow Extension", "General", 0, 0, true)]
     public sealed class YellowPackage : AsyncPackage
     {
         /// <summary>

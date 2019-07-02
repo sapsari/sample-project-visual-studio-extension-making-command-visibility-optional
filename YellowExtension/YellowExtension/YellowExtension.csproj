@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YellowCommand.cs" />
+    <Compile Include="YellowOptionsPage.cs" />
     <Compile Include="YellowPackage.cs" />
   </ItemGroup>
   <ItemGroup>
