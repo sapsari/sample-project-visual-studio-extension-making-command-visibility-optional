@@ -28,10 +28,11 @@ namespace YellowNamespace
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideOptionPage(typeof(YellowOptionsPage), "Yellow Extension", "General", 0, 0, true)]
     [ProvideUIContextRule("cc77a238-dcac-447c-bc95-bfd4d760d7e6", "UIContextRuleOfYellowCommand",
-        expression: "userWantsToSeeIt",
-        termNames: new[] { "userWantsToSeeIt" },
+        expression: "userWantsToSeeIt|!hasRunBefore",
+        termNames: new[] { "userWantsToSeeIt", "hasRunBefore" },
         termValues: new[] {
-            "UserSettingsStoreQuery:" + YellowOptionsPage.RegistryFullPathToIsDisplayingYellowCommandAsBoolean
+            "UserSettingsStoreQuery:" + YellowOptionsPage.RegistryFullPathToIsDisplayingYellowCommandAsBoolean,
+            "UserSettingsStoreQuery:" + YellowOptionsPage.RegistryFullPathToIsDisplayingYellowCommandAsString
         }
     )]
     public sealed class YellowPackage : AsyncPackage
@@ -56,6 +57,9 @@ namespace YellowNamespace
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await YellowCommand.InitializeAsync(this);
+
+            var optionsPage = (YellowOptionsPage)GetDialogPage(typeof(YellowOptionsPage));
+            await optionsPage.InitializeSettingsToStorageAsync();
         }
 
         #endregion
