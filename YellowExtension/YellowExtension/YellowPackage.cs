@@ -57,9 +57,6 @@ namespace YellowNamespace
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await YellowCommand.InitializeAsync(this);
-
-            var optionsPage = (YellowOptionsPage)GetDialogPage(typeof(YellowOptionsPage));
-            await optionsPage.InitializeSettingsToStorageAsync();
         }
 
         #endregion

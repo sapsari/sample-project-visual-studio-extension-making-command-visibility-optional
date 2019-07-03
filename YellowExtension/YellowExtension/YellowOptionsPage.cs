@@ -55,17 +55,5 @@ namespace YellowNamespace
             var userSettingsStore = settingsManager.GetWritableSettingsStore(SettingsScope.UserSettings);
             userSettingsStore.SetBoolean(registryCollectionPath, propertyName, IsDisplayingYellowCommand);
         }
-
-        public async Task InitializeSettingsToStorageAsync()
-        {
-            // Make sure custom property exists in the registry
-            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-            var settingsManager = new ShellSettingsManager(ServiceProvider.GlobalProvider);
-            var userSettingsStore = settingsManager.GetWritableSettingsStore(SettingsScope.UserSettings);
-            if (!userSettingsStore.CollectionExists(registryCollectionPath))
-                userSettingsStore.CreateCollection(registryCollectionPath);
-            if (!userSettingsStore.PropertyExists(registryCollectionPath, propertyName))
-                userSettingsStore.SetBoolean(registryCollectionPath, propertyName, IsDisplayingYellowCommand);
-        }
     }
 }
