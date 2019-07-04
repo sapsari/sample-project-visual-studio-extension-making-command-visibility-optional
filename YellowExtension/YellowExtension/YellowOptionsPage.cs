@@ -15,6 +15,7 @@ namespace YellowNamespace
         const string registryCollectionPath = @"ApplicationPrivateSettings\YellowNamespace\YellowOptionsPage";
         const string propertyName = nameof(IsDisplayingYellowCommand) + "Raw";
 
+        /// <summary>
         /// Full path into registry for boolean value of IsDisplayingYellowCommand, to be consumed by UI context rule
         /// </summary>
         public const string RegistryFullPathToIsDisplayingYellowCommandAsBoolean =
@@ -48,7 +49,7 @@ namespace YellowNamespace
             OleMenuCommandService commandService = this.GetService(typeof(System.ComponentModel.Design.IMenuCommandService)) as OleMenuCommandService;
             var yellowCommand = commandService.FindCommand(new System.ComponentModel.Design.CommandID(YellowCommand.CommandSet, YellowCommand.CommandId));
             yellowCommand.Visible = IsDisplayingYellowCommand;
-
+            
             // Write custom property to the registry
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
             var settingsManager = new ShellSettingsManager(ServiceProvider.GlobalProvider);
